@@ -85,7 +85,7 @@ export default function HomeScreen() {
   return (
     <View className="flex-1">
       <Image
-        source={require("../../assets/images/homescreen1.png")}
+        source={require("../../assets/images/lines-picture-image_1183228.jpg")}
         style={{
           position: "absolute",
           width: "100%",
@@ -125,22 +125,21 @@ export default function HomeScreen() {
           <Loading />
         ) : (
           <ScrollView>
-            {/* Trending Movies */}
-            {trending?.length > 0 && <TrendingMovies data={trending} />}
-
             {/* Popular Movies */}
             {popular?.length > 0 && (
               <PopularMovie title="Popular" data={popular} />
+            )}
+            {/* Trending Movies */}
+            {trending?.length > 0 && <TrendingMovies data={trending} />}
+
+            {/* Upcoming Movies */}
+            {upcoming?.length > 0 && (
+              <UpcomingMovie title="Upcoming" data={upcoming} />
             )}
 
             {/* Top Rated Movies */}
             {topRated?.length > 0 && (
               <TopRatedMovies genre={genre} title="Top Rated" data={topRated} />
-            )}
-
-            {/* Upcoming Movies */}
-            {upcoming?.length > 0 && (
-              <UpcomingMovie title="Upcoming" data={upcoming} />
             )}
           </ScrollView>
         )}
